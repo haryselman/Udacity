@@ -45,15 +45,13 @@ header {
 }
 
 .header-title {
-    font-weight: 500;
+    font: 500 1.4em "Roboto", sans-serif;
     letter-spacing: 0.15em;
-    font-size: 1.4em;
     flex: 0 1 60em;
     z-index: 100;
 }
 
-header a,
-footer a {
+.base-link {
     text-decoration: none;
     color: black;
 }
@@ -76,20 +74,18 @@ nav {
 
 .social-icons,
 .social-icons-footer {
-    font-size: 1.2em;
+    font: 1.2em "Roboto", sans-serif;
     text-align: center;
 }
 
-.social-icons a,
-.social-icons-footer a {
+.social-link {
     border: 2px solid black;
     border-radius: 50%;
     width: 1.7em;
     line-height: 1.7em;
 }
 
-.social-icons a:hover,
-.social-icons-footer a:hover {
+.social-link:hover {
     color: #1941C4;
     border-color: #1941C4;
 }
@@ -121,13 +117,12 @@ nav {
     position: relative;
 }
 
-.portfolio-content img,
-.portfolio-content picture {
+.portfolio-image {
     width: 100%;
 }
 
 /* portfolio description elements on hover */
-.portfolio-item a .portfolio-item-description {
+.portfolio-item-description {
     opacity: 0;
     text-align: left;
     position: absolute;
@@ -139,37 +134,35 @@ nav {
     line-height: 1.6em;
     padding: 2em;
     background-color: rgba(0,0,0,0.85);
+    text-decoration: none;
 }
 
-a:hover .portfolio-item-description {
+.portfolio-item-description:hover {
     opacity: 1;
 }
 
-a:hover .portfolio-item-description h2 {
-    font-weight: 200;
-    font-size: 1em;
-    margin-bottom: 1em;
+.portfolio-item-description:hover .portfolio-title {
+    font: 200 1em "Roboto", sans-serif;
+    margin: 0 0 1em 0;
     letter-spacing: 0.2em;
 }
 
-a:hover .portfolio-item-description h2:after {
+.portfolio-item-description:hover .portfolio-title:after {
     content: " ";
     position: relative;
     display: block;
-    padding-top: 1em;
+    padding: 1em 0 0 0;
     width: 3em;
     border-bottom: 3px solid white;
 }
 
-a:hover .portfolio-item-description h2 {
-    font-weight: 900;
-    font-size: 1em;
+.portfolio-item-description:hover .portfolio-title {
+    font: 900 1em "Roboto", sans-serif;
     letter-spacing: 0.2em;
 }
 
-a:hover .portfolio-item-description p {
-    font-weight: 400;
-    font-size: 1em;
+.portfolio-item-description:hover .portfolio-paragraph {
+    font: 400 1em "Roboto", sans-serif;
     letter-spacing: 0.2em;
 }
 
@@ -179,16 +172,14 @@ a:hover .portfolio-item-description p {
 */
 
 footer h3 {
+    font: 500 1.4em "Roboto", sans-serif;
     margin: 0.5em 0 0.8em 0;
     text-align: center;
-    font-weight: 500;
     letter-spacing: 0.15em;
-    font-size: 1.4em;
 }
 
 .user-characteristics {
-    font-size: 1em;
-    font-weight: 300;
+    font: 300 1em "Roboto", sans-serif;
     color: #737373;
     letter-spacing: 0.1em;
     text-align: center;
@@ -233,9 +224,28 @@ footer li {
 .about-text-content {
     margin: 10vh auto;
     max-width: 34em;
-    padding-left: 2em;
+    padding: 0 0 0 2em;
 }
 
+.about-text-title {
+    font: 500 1.6em "Roboto", sans-serif;
+    letter-spacing: 0.15em;
+}
+
+.about-text-title:after {
+    content: " ";
+    position: relative;
+    display: block;
+    padding-top: 1em;
+    width: 3em;
+    border-bottom: 3px solid white;
+}
+
+.about-text-paragraph {
+    font: 400 1.2em/1.6 "Roboto", sans-serif;
+    margin: 2em 0 3em 0;
+    letter-spacing: 0.15em;
+}
 .about-img-content {
     position: relative;
     min-height: 25em;
@@ -251,33 +261,9 @@ footer li {
     bottom: 0;
 }
 
-.about-text-content h1 {
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    font-size: 1.6em;
-}
-
-.about-text-content h1:after {
-    content: " ";
-    position: relative;
-    display: block;
-    padding-top: 1em;
-    width: 3em;
-    border-bottom: 3px solid white;
-}
-
-.about-text-content p {
-    margin: 2em 0 3em 0;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    font-size: 1.2em;
-    line-height: 1.6;
-}
-
 .contact-link {
-    font-weight: 400;
+    font: 400 1em "Roboto", sans-serif;
     letter-spacing: 0.15em;
-    font-size: 1em;
     text-decoration: none;
     color: white;
     padding: 1em;
@@ -301,7 +287,7 @@ footer li {
     .about-text-content {
         margin: 10vh auto;
         width: 100%;
-        padding-left: 1em;
+        padding: 0 0 0 1em;
     }
 
     .about-img-content {
@@ -318,7 +304,7 @@ footer li {
         bottom: 0;
     }
 
-    .about-text-content h1 {
+    .about-text-title {
         display: none;
     }
 
@@ -330,22 +316,22 @@ footer li {
 
 
 @media screen and (max-width: 1160px) {
-    .about-text-content p {
-        font-size: 1em;
+    .about-text-paragraph {
+        font: 1em "Roboto", sans-serif;
     }
 
     .contact-link {
-        font-size: 0.8em;
+        font: 0.8em "Roboto", sans-serif;
     }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1049px)  {
-    .about-text-content p {
-        font-size: 1.2em;
+    .about-text-paragraph {
+        font: 1.2em "Roboto", sans-serif;
     }
 
     .contact-link {
-        font-size: 1em;
+        font: 1em "Roboto", sans-serif;
     }
 
     .about-img-content {
@@ -371,7 +357,7 @@ footer li {
         padding: 0;
     }
 
-    .about-text-content p {
+    .about-text-paragraph {
         font-size: 0.9em;
     }
 
@@ -400,7 +386,6 @@ footer li {
     }
 }
 
-
 @media screen and (min-width: 761px) {
     .menu-burger {
         display: none;
@@ -411,18 +396,18 @@ footer li {
     }
 
     nav {
-        font-size: 1.1em;
+        font: 1.1em "Roboto", sans-serif;
         letter-spacing: 0.1em;
         flex: 1 0 20em;
     }
 
     nav li {
-        margin-right: 1.5em;
-        padding-bottom: 1.25em;
+        margin: 0 1.5em 0 0;
+        padding: 0 0 1.25em 0;
     }
 
-    nav li .active-link {
-        padding-bottom: 1.25em;
+    .active-link {
+        padding: 0 0 1.25em 0;
         border-bottom: 0.3em solid black;
     }
 
@@ -438,8 +423,8 @@ footer li {
         flex: 1 0 6em;
     }
 
-    .social-icons li {
-        padding-left: 0.8em;
+    .social-icons-padding {
+        padding: 0 0 0 0.8em;
     }
 
     .hamburger {
@@ -472,7 +457,7 @@ footer li {
     }
 
     nav {
-        font-size: 1.4em;
+        font: 1.4em "Roboto", sans-serif;
         text-align: center;
         padding-top: 35%;
         letter-spacing: 0.2em;
@@ -497,7 +482,7 @@ footer li {
         position: relative;
         border: none;
         background: none;
-        font-size: 1.8em;
+        font: 1.8em "Roboto", sans-serif;
         margin: 0;
         padding: 0;
         outline: 0;
@@ -509,7 +494,7 @@ footer li {
         top: 0;
         bottom: 0;
         right: 0;
-        margin-top: 70%;
+        margin: 70% 0 0 0;
         z-index: 70;
     }
 
@@ -517,7 +502,7 @@ footer li {
         display: none;
     }
 
-    .social-icons li {
+    .social-icons-padding {
         display: inline;
         padding: 0.5em;
     }
