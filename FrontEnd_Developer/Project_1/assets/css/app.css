@@ -53,8 +53,9 @@ header {
 }
 
 .header-title {
-    font: 500 1.4em "Roboto", sans-serif;
+    font-weight: 500;
     letter-spacing: 0.15em;
+    font-size: 1.4em;
     -webkit-box-flex: 0;
     -webkit-flex: 0 1 60em;
     -ms-flex: 0 1 60em;
@@ -62,7 +63,8 @@ header {
     z-index: 100;
 }
 
-.base-link {
+header a,
+footer a {
     text-decoration: none;
     color: black;
 }
@@ -93,18 +95,20 @@ nav {
 
 .social-icons,
 .social-icons-footer {
-    font: 1.2em "Roboto", sans-serif;
+    font-size: 1.2em;
     text-align: center;
 }
 
-.social-link {
+.social-icons a,
+.social-icons-footer a {
     border: 2px solid black;
     border-radius: 50%;
     width: 1.7em;
     line-height: 1.7em;
 }
 
-.social-link:hover {
+.social-icons a:hover,
+.social-icons-footer a:hover {
     color: #1941c4;
     border-color: #1941c4;
 }
@@ -136,12 +140,13 @@ nav {
     position: relative;
 }
 
-.portfolio-image {
+.portfolio-content img,
+.portfolio-content picture {
     width: 100%;
 }
 
 /* portfolio description elements on hover */
-.portfolio-item-description {
+.portfolio-item a .portfolio-item-description {
     opacity: 0;
     text-align: left;
     position: absolute;
@@ -153,35 +158,37 @@ nav {
     line-height: 1.6em;
     padding: 2em;
     background-color: rgba(0,0,0,0.85);
-    text-decoration: none;
 }
 
-.portfolio-item-description:hover {
+a:hover .portfolio-item-description {
     opacity: 1;
 }
 
-.portfolio-item-description:hover .portfolio-title {
-    font: 200 1em "Roboto", sans-serif;
-    margin: 0 0 1em 0;
+a:hover .portfolio-item-description h2 {
+    font-weight: 200;
+    font-size: 1em;
+    margin-bottom: 1em;
     letter-spacing: 0.2em;
 }
 
-.portfolio-item-description:hover .portfolio-title:after {
+a:hover .portfolio-item-description h2:after {
     content: " ";
     position: relative;
     display: block;
-    padding: 1em 0 0 0;
+    padding-top: 1em;
     width: 3em;
     border-bottom: 3px solid white;
 }
 
-.portfolio-item-description:hover .portfolio-title {
-    font: 900 1em "Roboto", sans-serif;
+a:hover .portfolio-item-description h2 {
+    font-weight: 900;
+    font-size: 1em;
     letter-spacing: 0.2em;
 }
 
-.portfolio-item-description:hover .portfolio-paragraph {
-    font: 400 1em "Roboto", sans-serif;
+a:hover .portfolio-item-description p {
+    font-weight: 400;
+    font-size: 1em;
     letter-spacing: 0.2em;
 }
 
@@ -191,14 +198,16 @@ nav {
 */
 
 footer h3 {
-    font: 500 1.4em "Roboto", sans-serif;
     margin: 0.5em 0 0.8em 0;
     text-align: center;
+    font-weight: 500;
     letter-spacing: 0.15em;
+    font-size: 1.4em;
 }
 
 .user-characteristics {
-    font: 300 1em "Roboto", sans-serif;
+    font-size: 1em;
+    font-weight: 300;
     color: #737373;
     letter-spacing: 0.1em;
     text-align: center;
@@ -251,28 +260,9 @@ footer li {
 .about-text-content {
     margin: 10vh auto;
     max-width: 34em;
-    padding: 0 0 0 2em;
+    padding-left: 2em;
 }
 
-.about-text-title {
-    font: 500 1.6em "Roboto", sans-serif;
-    letter-spacing: 0.15em;
-}
-
-.about-text-title:after {
-    content: " ";
-    position: relative;
-    display: block;
-    padding-top: 1em;
-    width: 3em;
-    border-bottom: 3px solid white;
-}
-
-.about-text-paragraph {
-    font: 400 1.2em/1.6 "Roboto", sans-serif;
-    margin: 2em 0 3em 0;
-    letter-spacing: 0.15em;
-}
 .about-img-content {
     position: relative;
     min-height: 25em;
@@ -288,9 +278,33 @@ footer li {
     bottom: 0;
 }
 
-.contact-link {
-    font: 400 1em "Roboto", sans-serif;
+.about-text-content h1 {
+    font-weight: 500;
     letter-spacing: 0.15em;
+    font-size: 1.6em;
+}
+
+.about-text-content h1:after {
+    content: " ";
+    position: relative;
+    display: block;
+    padding-top: 1em;
+    width: 3em;
+    border-bottom: 3px solid white;
+}
+
+.about-text-content p {
+    margin: 2em 0 3em 0;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.contact-link {
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    font-size: 1em;
     text-decoration: none;
     color: white;
     padding: 1em;
@@ -299,7 +313,7 @@ footer li {
 }
 
 .contact-link:hover {
-    background-color: #333;
+    background-color: #333333;
 }
 
 @media screen and (max-width: 1050px) {
@@ -314,7 +328,7 @@ footer li {
     .about-text-content {
         margin: 10vh auto;
         width: 100%;
-        padding: 0 0 0 1em;
+        padding-left: 1em;
     }
 
     .about-img-content {
@@ -331,7 +345,7 @@ footer li {
         bottom: 0;
     }
 
-    .about-text-title {
+    .about-text-content h1 {
         display: none;
     }
 
@@ -343,22 +357,22 @@ footer li {
 
 
 @media screen and (max-width: 1160px) {
-    .about-text-paragraph {
-        font: 1em "Roboto", sans-serif;
+    .about-text-content p {
+        font-size: 1em;
     }
 
     .contact-link {
-        font: 0.8em "Roboto", sans-serif;
+        font-size: 0.8em;
     }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1049px) {
-    .about-text-paragraph {
-        font: 1.2em "Roboto", sans-serif;
+    .about-text-content p {
+        font-size: 1.2em;
     }
 
     .contact-link {
-        font: 1em "Roboto", sans-serif;
+        font-size: 1em;
     }
 
     .about-img-content {
@@ -384,7 +398,7 @@ footer li {
         padding: 0;
     }
 
-    .about-text-paragraph {
+    .about-text-content p {
         font-size: 0.9em;
     }
 
@@ -413,6 +427,7 @@ footer li {
     }
 }
 
+
 @media screen and (min-width: 761px) {
     .menu-burger {
         display: none;
@@ -423,7 +438,7 @@ footer li {
     }
 
     nav {
-        font: 1.1em "Roboto", sans-serif;
+        font-size: 1.1em;
         letter-spacing: 0.1em;
         -webkit-box-flex: 1;
         -webkit-flex: 1 0 20em;
@@ -432,12 +447,12 @@ footer li {
     }
 
     nav li {
-        margin: 0 1.5em 0 0;
-        padding: 0 0 1.25em 0;
+        margin-right: 1.5em;
+        padding-bottom: 1.25em;
     }
 
-    .active-link {
-        padding: 0 0 1.25em 0;
+    nav li .active-link {
+        padding-bottom: 1.25em;
         border-bottom: 0.3em solid black;
     }
 
@@ -456,8 +471,8 @@ footer li {
         flex: 1 0 6em;
     }
 
-    .social-icons-padding {
-        padding: 0 0 0 0.8em;
+    .social-icons li {
+        padding-left: 0.8em;
     }
 
     .hamburger {
@@ -490,7 +505,7 @@ footer li {
     }
 
     nav {
-        font: 1.4em "Roboto", sans-serif;
+        font-size: 1.4em;
         text-align: center;
         padding-top: 35%;
         letter-spacing: 0.2em;
@@ -513,7 +528,7 @@ footer li {
         position: relative;
         border: none;
         background: none;
-        font: 1.8em "Roboto", sans-serif;
+        font-size: 1.8em;
         margin: 0;
         padding: 0;
         outline: 0;
@@ -525,7 +540,7 @@ footer li {
         top: 0;
         bottom: 0;
         right: 0;
-        margin: 70% 0 0 0;
+        margin-top: 70%;
         z-index: 70;
     }
 
@@ -533,7 +548,7 @@ footer li {
         display: none;
     }
 
-    .social-icons-padding {
+    .social-icons li {
         display: inline;
         padding: 0.5em;
     }
